@@ -22,4 +22,4 @@ jobs:
           distribution: 'temurin'
           java-version: '8'
           cache: 'gradle'
-          cache-dependency-path: app/build.gradle
+          cache-dependency-path: androidApp/build.gradle
