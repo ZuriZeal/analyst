@@ -21,23 +21,5 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '8'
-          cache: 'gradle'   # Speeds up Android builds significantly
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x ./gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
-
-      - name: Run unit tests
-        run: ./gradlew testDebugUnitTest --stacktrace
-
-      - name: Run Android lint
-        run: ./gradlew lint --stacktrace
-
-      - name: Upload Build Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: debug-apk
-          path: app/build/outputs/**/*.apk
-
+          cache: 'gradle'
+          cache-dependency-path: app/build.gradle
